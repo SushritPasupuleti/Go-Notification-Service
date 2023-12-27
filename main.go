@@ -2,6 +2,7 @@ package main
 
 import (
 	// "errors"
+	// "context"
 	"fmt"
 	// "log"
 	"net/http"
@@ -10,9 +11,10 @@ import (
 	// "server/db"
 	"server/env"
 	"server/logging"
-
 	// "server/models"
-	// "server/routes"
+
+	"server/routes"
+	// "server/kafka"
 
 	"github.com/rs/zerolog/log"
 )
@@ -29,7 +31,7 @@ func (app *Application) Serve() error {
 
 	srv := &http.Server{
 		Addr: fmt.Sprintf(":%s", port),
-		// Handler: routes.Routes(),
+		Handler: routes.Routes(),
 	}
 
 	return srv.ListenAndServe()
@@ -60,7 +62,7 @@ func main() {
 		Config: env.DefaultConfig,
 		// Models: models.New(dbConn.DB),
 	}
-
+	
 	err := app.Serve()
 	if err != nil {
 		log.Fatal().

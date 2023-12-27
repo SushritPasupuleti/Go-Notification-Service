@@ -6,7 +6,7 @@ type User struct {
 }
 
 type Notification struct {
-	FromID  User   `json:"from_id"`
-	ToID    User   `json:"to_id"`
+	FromID  int   `json:"from_id"`
+	ToID    int   `json:"to_id"`
 	Message string `json:"message"`
 }

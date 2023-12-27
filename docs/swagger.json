@@ -1,0 +1,21 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server for a notification service written in Go.",
+        "title": "Go Notification Service API",
+        "termsOfService": "http://localhost:6000/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.localhost:6000/support",
+            "email": "sushrit.pk21@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:6000",
+    "basePath": "/",
+    "paths": {}
+}
