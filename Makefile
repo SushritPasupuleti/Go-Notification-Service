@@ -24,6 +24,11 @@ lint:
 	@echo "Running linter..."
 	@golangci-lint run
 
+benchmark:
+	@echo "Running benchmark..."
+	@wrk2 -t2 -c100 -d30s -R2000 -s benchmark.lua http://localhost:${PORT}/producer/send 
+	# For 30s, 2000 requests per second, 100 connections, 2 threads
+
 kafka_up:
 	@echo "Starting kafka..."
 	@sudo docker compose up -d

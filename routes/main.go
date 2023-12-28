@@ -50,7 +50,7 @@ func Routes() http.Handler {
 		log.Fatal().Err(err).Msg("Error setting up Kafka producer")
 	}
 	// defer producer.Close()
-	log.Info().Msg("Kafka Producer 📨 running")
+	log.Info().Msg("Kafka Producer 🫕 running")
 
 	router.Group(func(r chi.Router) {
 		router.Route("/producer", func(r chi.Router) {

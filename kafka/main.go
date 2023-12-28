@@ -29,7 +29,7 @@ func (consumer *Consumer) ConsumeClaim(
 
 	log.Info().Msg("Consuming messages from Kafka")
 
-	log.Info().Msgf("Claim: %v", claim.Topic())
+	log.Info().Msgf("Claim Topic: %v", claim.Topic())
 
 	for msg := range claim.Messages() {
 		log.Info().Msgf("Message claimed: value = %s, timestamp = %v, topic = %s", string(msg.Value), msg.Timestamp, msg.Topic)
@@ -100,7 +100,7 @@ func SetupConsumerGroup(store *models.NotificationStore) {
 		log.Fatal().Err(err).Msg("failed to setup consumer group")
 	}
 
-	log.Info().Msg("Kafka Consumer 📨 running")
+	log.Info().Msg("Kafka Consumer 🥣 running")
 
 	consumer := &Consumer{store: store}
 	ctx := context.Background()
